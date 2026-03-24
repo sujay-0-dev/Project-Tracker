@@ -11,19 +11,21 @@ const views: { id: View; label: string }[] = [
   { id: 'timeline', label: 'Timeline' },
 ]
 
+import { Link } from 'react-router-dom'
+
 export function Header({ activeView, onViewChange }: Props) {
   return (
     <header className="shrink-0 h-14 flex items-center justify-between px-5 bg-surface-card border-b border-surface-border">
       {/* logo */}
-      <div className="flex items-center gap-3">
+      <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white text-xs font-bold shadow-tab shrink-0">
           PT
         </div>
         <div>
           <p className="text-sm font-semibold text-text-primary leading-tight">Project Tracker</p>
-          <p className="text-2xs text-text-muted hidden sm:block">Velozity Global Solutions</p>
+          <p className="text-2xs text-text-muted hidden sm:block">Back to Home</p>
         </div>
-      </div>
+      </Link>
 
       {/* view tabs */}
       <div className="flex items-center gap-1 bg-bg rounded-xl p-1 border border-surface-border">
